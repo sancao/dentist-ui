@@ -1,0 +1,39 @@
+/**
+ * Globals
+ */
+ .border-black {
+	border: 1px solid #000;
+}
+
+.circle-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    background-position-y: 25%;
+  }
+
+  input {
+    border: 1px solid silver;
+    border-radius: 4px;
+    background: white;
+    padding: 5px 10px;
+  }
+  
+  .valid  {
+    border-color: #5A5;
+  }
+  
+  .valid :focus {
+    border-color: #5A5;
+  }
+  
+  .error {
+    border-color: red;
+    color: red;
+  }
+  
+  .error:focus {
+    border-color: red;
+  }
+    
