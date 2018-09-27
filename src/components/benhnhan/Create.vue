@@ -181,6 +181,7 @@
 </template>
 
 <script>
+/* eslint-disable */
     // Import this component
     import datePicker from 'vue-bootstrap-datetimepicker';
   

@@ -34,9 +34,7 @@
                     <div class="row">
                         <div class="col-xs-12 form-group">
                             <label class="control-label">Phone</label>
-                            <input type="text" 
-                            placeholder="Nhập điện thoại người dùng..." 
-                            class="form-control"
+                            <input type="text" placeholder="Nhập điện thoại người dùng..." class="form-control"
                                 v-model="user.phone"
                                 v-on:input="$v.user.phone.$touch"
                                 v-bind:class="{error: $v.user.phone.$error, 
@@ -70,12 +68,12 @@
 </template>
 
 <script>
+    /* eslint-disable */
     import { required, minLength,maxLength,email,url } from 'vuelidate/lib/validators';
     export default {
-        mounted() {
+        mounted(){
             let app = this;
-            let id = app.$route.params.id;
-            app.userId = id;
+            let id = app.$route.params.id;app.userId = id;
             axios.get('/api/v1/users/' + id)
                 .then(function (resp) {
                     app.user = resp.data;

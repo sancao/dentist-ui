@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { userService } from '../services';
-import { router } from '../helpers';
+import { routers } from '../helpers';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
@@ -18,7 +18,7 @@ export const authentication = {
                 .then(
                     user => {
                         commit('loginSuccess', user);
-                        router.push('/');
+                        routers.push('/');
                     },
                     error => {
                         commit('loginFailure', error);

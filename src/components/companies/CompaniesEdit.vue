@@ -16,8 +16,7 @@
                             <input type="text" placeholder="Tên công ty" class="form-control"
                                 v-model="company.name"
                                 v-on:input="$v.company.name.$touch"
-                                v-bind:class="{error: $v.company.name.$error, 
-                                valid: $v.company.name.$dirty && !$v.company.name.$invalid}">
+                                v-bind:class="{error: $v.company.name.$error,valid: $v.company.name.$dirty && !$v.company.name.$invalid}">
                         </div>
                     </div>
                     <div class="row">
@@ -70,6 +69,7 @@
 </template>
 
 <script>
+/* eslint-disable */
     import { required, minLength,maxLength,email,url } from 'vuelidate/lib/validators';
     export default {
         mounted() {

@@ -34,6 +34,7 @@
 
 
 <script>
+/* eslint-disable */
   import { required, minLength,maxLength,email,url } from 'vuelidate/lib/validators';
 
   export default {
