@@ -11,7 +11,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueAuth from '@websanova/vue-auth'
 import App from './app/App'
-
+import Vuelidate from 'vuelidate'
 Vue.config.productionTip = false
 
 // setup fake backend
@@ -21,6 +21,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
+Vue.use(Vuelidate);
 
 Vue.router = routers
 Vue.use(VueAuth, {

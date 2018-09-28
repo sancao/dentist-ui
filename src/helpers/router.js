@@ -37,8 +37,8 @@ import VueRouter from 'vue-router';
 import Dashboard from '../components/dashboard/Dashboard.vue';
 import Home from '../components/home/HomePage.vue';
 // auth page
-import Register from '../components/auth/register.vue';
-import Login from '../components/auth/login.vue';
+import Register from '../components/auth/Register.vue';
+import Login from '../components/auth/Login.vue';
 // companies
 import CompanyCreate from '../components/companies/CompaniesCreate.vue';
 import CompanyEdit from '../components/companies/CompaniesEdit.vue';

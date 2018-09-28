@@ -11,11 +11,11 @@ export const userService = {
 function login(username, password) {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+    return fetch(`${config.API_LOCATION}/auth/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response

@@ -3,7 +3,7 @@
         <div class="alert alert-danger" v-if="user.error">
             <p>There was an error, unable to sign in with those credentials.</p>
         </div>
-        <form autocomplete="off" @submit.prevent="login" method="post">
+        <form autocomplete="off" @submit.prevent="handleSubmit" method="post">
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="text" id="email"
@@ -62,25 +62,46 @@
             }
         }
     },
+    computed: {
+        loggingIn () {
+            return this.$store.state.authentication.status.loggingIn;
+        }
+    },
+    created () {
+        // reset login status
+        this.$store.dispatch('authentication/logout');
+    },
     methods: {
-      login(){
-        debugger;
-        this.$v.user.$touch();
-        if (!this.$v.$invalid) {
-          var app = this
-          this.$auth.login({
-              params: {
-                email: app.user.email,
-                password: app.user.password
-              }, 
-              success: function () {},
-              error: function () {},
-              rememberMe: true,
-              redirect: '/dashboard',
-              fetchUser: true,
-          });
-        }       
-      }
+        handleSubmit (e) {
+            debugger;
+            this.submitted = true;
+            const username = this.user.email;
+            const password = this.user.password;
+            const { dispatch } = this.$store;
+            if (username && password) {
+                dispatch('authentication/login', { username, password });
+            }
+        }
     }
+    // methods: {
+    //   login(){
+    //     debugger;
+    //     this.$v.user.$touch();
+    //     if (!this.$v.$invalid) {
+    //       var app = this
+    //       this.$auth.login({
+    //           params: {
+    //             email: app.user.email,
+    //             password: app.user.password
+    //           }, 
+    //           success: function () {},
+    //           error: function () {},
+    //           rememberMe: true,
+    //           redirect: '/dashboard',
+    //           fetchUser: true,
+    //       });
+    //     }       
+    //   }
+    // }
   } 
 </script>
